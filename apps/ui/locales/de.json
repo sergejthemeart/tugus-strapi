@@ -1,0 +1,266 @@
+{
+  "seo": {
+    "metaTitle": "SEO-TITLE",
+    "metaDescription": "SEO-DESCRIPTION",
+    "metaImage": "SEO-IMAGE",
+    "metaRobots": "SEO-ROBOTS",
+    "keywords": "SEO-KEYWORDS",
+    "applicationName": "SEO-APPLICATION-NAME",
+    "og": {
+      "title": "SEO-OG-TITLE",
+      "description": "SEO-OG-DESCRIPTION",
+      "url": "SEO-OG-URL",
+      "siteName": "SEO-OG-SITE-NAME",
+      "image": "SEO-OG-IMAGE"
+    },
+    "twitter": {
+      "card": "SEO-TWITTER-CARD",
+      "title": "SEO-TWITTER-TITLE",
+      "description": "SEO-TWITTER-DESCRIPTION",
+      "siteId": "SEO-TWITTER-SITE-ID",
+      "creator": "SEO-TWITTER-CREATOR",
+      "creatorId": "SEO-TWITTER-CREATOR-ID",
+      "imageUrl": "SEO-TWITTER-IMAGE-URL"
+    }
+  },
+
+  "general": {
+    "noOptionsAvailable": "Keine Optionen verfügbar",
+    "search": "Suchen",
+    "loading": "Laden",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "submitForm": "Absenden",
+    "saveChanges": "Änderungen speichern",
+    "back": "Zurück"
+  },
+
+  "tables": {
+    "previousPage": "Vorherige Seite",
+    "nextPage": "Nächste Seite",
+    "lastPage": "Letzte Seite",
+    "firstPage": "Erste Seite",
+    "rowsPerPage": "Zeilen pro Seite",
+    "pageXOfY": "Seite {x} von {y}",
+    "ascending": "Aufsteigend",
+    "descending": "Absteigend",
+    "noData": "Keine Daten"
+  },
+
+  "navbar": {
+    "account": "Konto",
+    "actions": {
+      "profile": "Profil",
+      "signOut": "Abmelden",
+      "changePassword": "Passwort ändern",
+      "signIn": "Anmelden"
+    }
+  },
+
+  "comps": {
+    "fileInput": {
+      "label": "Datei auswählen",
+      "dragAndDrop": "Datei per Drag & Drop hinzufügen oder per Klick auswählen",
+      "validFileTypes": "Datei muss im Format {validFileTypes} vorliegen",
+      "wrongFileType": "Dieser Dateityp wird nicht unterstützt",
+      "selectedFile": "Ausgewählte Datei: {fileName}",
+      "removeFile": "Datei entfernen"
+    },
+    "datePicker": {
+      "label": "Datum auswählen"
+    },
+    "dateRangePicker": {
+      "label": "Datumsbereich auswählen"
+    },
+    "themeToggle": {
+      "label": "Theme wechseln"
+    },
+    "dialog": {
+      "confirmClose": "Möchten Sie den Dialog schließen? Alle nicht gespeicherten Änderungen gehen verloren."
+    }
+  },
+
+  "errors": {
+    "global": {
+      "title": "Ein unbekannter Fehler ist aufgetreten",
+      "tryAgain": "Erneut versuchen",
+      "invalidContent": "Dieser Inhalt konnte nicht angezeigt werden",
+      "somethingWentWrong": "Etwas ist schiefgelaufen 🥺"
+    },
+
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite wurde nicht gefunden.",
+      "solution": "Bitte prüfen Sie die URL oder kehren Sie zur Startseite zurück.",
+      "redirect": "Zur Startseite"
+    },
+
+    "forms": {
+      "errorsInForm": "Das Formular enthält Fehler",
+      "checkFormForErrors": "Bitte prüfen Sie ob Werte fehlen"
+    },
+
+    "zodValidation": {
+      "invalid_type": "Erwarteter Typ ist {expected}, aber {received} erhalten",
+      "invalid_type_received_undefined": "Feld ist erforderlich",
+      "invalid_literal": "Ungültiger Wert, erwartet {expected}",
+      "invalid_union": "Ungültiger Wert",
+
+      "invalid_string": {
+        "regex": "Ungültiges Format"
+      },
+      "too_small": {
+        "string": {
+          "exact": "Zeichenkette muss genau {minimum} Zeichen haben",
+          "inclusive": "Zeichenkette muss mindestens {minimum} Zeichen haben",
+          "not_inclusive": "Zeichenkette muss mehr als {minimum} Zeichen haben"
+        },
+        "number": {
+          "exact": "Wert muss genau {minimum} sein",
+          "inclusive": "Mindestwert ist {minimum}",
+          "not_inclusive": "Zahl muss größer als {minimum} sein"
+        }
+      },
+      "too_big": {
+        "string": {
+          "exact": "Zeichenkette muss genau {maximum} Zeichen haben",
+          "inclusive": "Zeichenkette darf höchstens {maximum} Zeichen haben",
+          "not_inclusive": "Zeichenkette muss weniger als {maximum} Zeichen haben"
+        },
+        "number": {
+          "exact": "Wert muss genau {maximum} sein",
+          "inclusive": "Höchstwert ist {maximum}",
+          "not_inclusive": "Zahl muss kleiner als {maximum} sein"
+        }
+      },
+      "custom": {
+        "password": "Passwörter stimmen nicht überein",
+        "passwordWithNumber": "Zeichenkette muss mindestens 1 Zahl enthalten",
+        "phoneNumber": "Dieses Feld muss 9 Ziffern enthalten"
+      }
+    }
+  },
+
+  "contactForm": {
+    "name": "Vor- und Nachname",
+    "namePlaceholder": "Max Mustermann",
+    "email": "E-Mail",
+    "emailPlaceholder": "max.mustermann@gmail.com",
+    "message": "Nachricht",
+    "gdpr": "Ich stimme der Verarbeitung meiner personenbezogenen Daten zu",
+    "submit": "Absenden",
+    "success": "Das Formular wurde erfolgreich gesendet.",
+    "error": "Das Formular konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+    "gdprLink": "Mehr zur Verarbeitung personenbezogener Daten"
+  },
+
+  "auth": {
+    "signIn": {
+      "status": {
+        "fail": "Anmeldung fehlgeschlagen",
+        "success": "Anmeldung erfolgreich",
+        "checkCredentials": "Bitte überprüfen Sie Ihre Anmeldedaten"
+      },
+      "errors": {
+        "CredentialsSignin": "Sie haben falsche Anmeldedaten eingegeben.",
+        "unexpectedError": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es später erneut."
+      },
+      "header": "Anmelden",
+      "description": "Geben Sie Ihre Anmeldedaten ein.",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "signingIn": "Anmeldung läuft...",
+      "forgotPassword": "Passwort vergessen",
+      "createAccount": "Konto erstellen"
+    },
+
+    "register": {
+      "status": {
+        "fail": "Registrierung fehlgeschlagen",
+        "success": "Registrierung erfolgreich",
+        "checkCredentials": "Bitte überprüfen Sie Ihre Daten"
+      },
+      "errors": {
+        "credentials": "Falsche Zugangsdaten angegeben",
+        "unexpectedError": "Registrierung fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+        "emailUsernameTaken": "E-Mail ist bereits vergeben. Bitte wählen Sie eine andere."
+      },
+      "header": "Registrierung",
+      "description": "Erstellen Sie ein Konto für den Systemzugang.",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort erstellen",
+      "checkPassword": "Passwort bestätigen",
+      "submit": "Konto erstellen",
+      "forgotPassword": "Bereits ein Konto? Anmelden.",
+      "checkEmail": "Folgen Sie den Anweisungen in Ihrer E-Mail zur Bestätigung.",
+      "signInLinkLinkDescription": "Bereits ein Konto?",
+      "signInLink": "Anmelden"
+    },
+
+    "changePassword": {
+      "errors": {
+        "invalidCurrentPassword": "Aktuelles Passwort stimmt nicht überein",
+        "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+        "newPasswordSameAsCurrent": "Neues Passwort muss sich vom aktuellen unterscheiden"
+      },
+      "successfullyChanged": "Passwort erfolgreich geändert",
+      "header": "Passwort ändern",
+      "description": "Wählen Sie ein neues Passwort für die Anmeldung.",
+      "currentPassword": "Aktuelles Passwort",
+      "password": "Neues Passwort",
+      "confirmPassword": "Neues Passwort bestätigen",
+      "submit": "Passwort ändern"
+    },
+
+    "accountActivation": {
+      "successfullySet": "Konto erfolgreich aktiviert. Sie können sich jetzt anmelden.",
+      "errors": {
+        "incorrectCodeProvided": "Ein falscher Link wurde generiert. Kontaktieren Sie den Support."
+      },
+      "welcome": "Willkommen",
+      "activateAccount": "Ein neues Konto wurde mit der E-Mail {email} erstellt.",
+      "invalidLink": "Dieser Link ist nicht gültig.",
+      "activate": "Konto aktivieren",
+      "header": "Passwort festlegen",
+      "description": "Wählen Sie ein Passwort für die Anmeldung.",
+      "submit": "Konto aktivieren",
+      "password": "Neues Passwort",
+      "confirmPassword": "Passwort bestätigen"
+    },
+
+    "resetPassword": {
+      "successfullySet": "Passwort erfolgreich geändert.",
+      "header": "Passwort zurücksetzen",
+      "description": "Wählen Sie ein neues Passwort für die Anmeldung.",
+      "submit": "Passwort festlegen",
+      "password": "Neues Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "errors": {
+        "incorrectCodeProvided": "Ungültiger oder abgelaufener Code. Bitte fordern Sie erneut ein Passwort-Reset an."
+      }
+    },
+
+    "forgotPassword": {
+      "passwordChangeEmailSent": "Eine E-Mail mit Anweisungen zum Zurücksetzen des Passworts wurde gesendet.",
+      "header": "Passwort vergessen",
+      "description": "Geben Sie die E-Mail ein, die Sie normalerweise zur Anmeldung verwenden.",
+      "email": "E-Mail",
+      "submit": "Konto wiederherstellen",
+      "errors": {
+        "failedToSendPasswordResetEmail": "Fehler beim Senden der Passwort-Reset-E-Mail"
+      }
+    },
+
+    "oauth": {
+      "orContinueWith": "Oder weiter mit",
+      "signingIn": "Anmeldung läuft...",
+      "signedInSuccessfully": "Erfolgreich angemeldet",
+      "redirecting": "Weiterleitung...",
+      "errors": {
+        "signInFailed": "OAuth-Anmeldung fehlgeschlagen"
+      },
+      "withGithub": "Mit GitHub anmelden"
+    }
+  }
+}
