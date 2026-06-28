@@ -16,7 +16,7 @@ import {
 import { routing, usePathname, useRouter } from "@/lib/navigation"
 
 const localeTranslation = {
-  cs: "Czech",
+  de: "Deutsch",
   en: "English",
 }
 
