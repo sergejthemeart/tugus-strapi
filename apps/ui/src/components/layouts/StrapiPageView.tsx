@@ -51,7 +51,7 @@ export default function StrapiPageView({ params, searchParams }: Props) {
 
         {content
           .filter((comp: any) => comp != null)
-          .map((comp) => {
+          .map((comp: any) => {
             const name = comp.__component
             const id = comp.id
             const key = `${name}-${id}`
