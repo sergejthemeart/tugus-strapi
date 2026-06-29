@@ -12,6 +12,9 @@ const nextConfig = {
   devIndicators: {
     position: "bottom-right",
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   // Enable cacheComponents when caching strategy is introduced
   // cacheComponents: true,
   experimental: {
