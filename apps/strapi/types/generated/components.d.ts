@@ -1,559 +1,874 @@
-import type { Schema, Struct } from "@strapi/strapi"
+import type { Schema, Struct } from '@strapi/strapi';
 
 export interface ElementsFooterItem extends Struct.ComponentSchema {
-  collectionName: "components_elements_footer_items"
+  collectionName: 'components_elements_footer_items';
   info: {
-    description: ""
-    displayName: "FooterItem"
-  }
+    description: '';
+    displayName: 'FooterItem';
+  };
   attributes: {
-    links: Schema.Attribute.Component<"utilities.link", true>
-    title: Schema.Attribute.String & Schema.Attribute.Required
-  }
+    links: Schema.Attribute.Component<'utilities.link', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface FormsContactForm extends Struct.ComponentSchema {
-  collectionName: "components_forms_contact_forms"
+  collectionName: 'components_forms_contact_forms';
   info: {
-    displayName: "ContactForm"
-  }
+    displayName: 'ContactForm';
+  };
   attributes: {
-    description: Schema.Attribute.Text
-    gdpr: Schema.Attribute.Component<"utilities.link", false>
-    title: Schema.Attribute.String
-  }
+    description: Schema.Attribute.Text;
+    gdpr: Schema.Attribute.Component<'utilities.link', false>;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface FormsNewsletterForm extends Struct.ComponentSchema {
-  collectionName: "components_forms_newsletter_forms"
+  collectionName: 'components_forms_newsletter_forms';
   info: {
-    displayName: "Newsletter"
-  }
+    displayName: 'Newsletter';
+  };
   attributes: {
-    description: Schema.Attribute.Text
-    gdpr: Schema.Attribute.Component<"utilities.link", false>
-    title: Schema.Attribute.String
-  }
+    description: Schema.Attribute.Text;
+    gdpr: Schema.Attribute.Component<'utilities.link', false>;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface LayoutNavbarItem extends Struct.ComponentSchema {
-  collectionName: "components_layout_navbar_items"
+  collectionName: 'components_layout_navbar_items';
   info: {
-    displayName: "NavbarItem"
-  }
+    displayName: 'NavbarItem';
+  };
   attributes: {
-    categoryItems: Schema.Attribute.Component<"utilities.link", true>
-    isCategoryLink: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>
-    label: Schema.Attribute.String
-    link: Schema.Attribute.Component<"utilities.link", false>
-  }
+    categoryItems: Schema.Attribute.Component<'utilities.link', true>;
+    isCategoryLink: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+  };
 }
 
 export interface SectionsAnimatedLogoRow extends Struct.ComponentSchema {
-  collectionName: "components_sections_animated_logo_rows"
+  collectionName: 'components_sections_animated_logo_rows';
   info: {
-    description: ""
-    displayName: "AnimatedLogoRow"
-  }
+    description: '';
+    displayName: 'AnimatedLogoRow';
+  };
   attributes: {
-    logos: Schema.Attribute.Component<"utilities.basic-image", true>
+    logos: Schema.Attribute.Component<'utilities.basic-image', true>;
     title: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-  }
+      >;
+  };
+}
+
+export interface SectionsAnnouncementBanner extends Struct.ComponentSchema {
+  collectionName: 'components_sections_announcement_banner';
+  info: {
+    description: 'Ank\u00FCndigungs-Banner mit optionalem Link';
+    displayName: 'AnnouncementBanner';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    variant: Schema.Attribute.Enumeration<
+      ['info', 'warning', 'success', 'error']
+    > &
+      Schema.Attribute.DefaultTo<'info'>;
+  };
+}
+
+export interface SectionsBlogSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_blog_section';
+  info: {
+    description: 'Blog-Beitr\u00E4ge \u00DCbersicht';
+    displayName: 'BlogSection';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    posts: Schema.Attribute.Component<'shared.blog-post', true>;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsCarousel extends Struct.ComponentSchema {
-  collectionName: "components_sections_carousels"
+  collectionName: 'components_sections_carousels';
   info: {
-    description: ""
-    displayName: "Carousel"
-  }
+    description: '';
+    displayName: 'Carousel';
+  };
   attributes: {
-    images: Schema.Attribute.Component<"utilities.image-with-link", true>
-    radius: Schema.Attribute.Enumeration<["sm", "md", "lg", "xl", "full"]>
-  }
+    images: Schema.Attribute.Component<'utilities.image-with-link', true>;
+    radius: Schema.Attribute.Enumeration<['sm', 'md', 'lg', 'xl', 'full']>;
+  };
+}
+
+export interface SectionsChangelog extends Struct.ComponentSchema {
+  collectionName: 'components_sections_changelog';
+  info: {
+    description: 'Versions-Chronik mit Features, Changes und Fixes';
+    displayName: 'Changelog';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    entries: Schema.Attribute.Component<'shared.changelog-entry', true>;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsCtaBanner extends Struct.ComponentSchema {
-  collectionName: "components_sections_cta_banners"
+  collectionName: 'components_sections_cta_banners';
   info: {
-    displayName: "CTABanner"
-  }
+    displayName: 'CTABanner';
+  };
   attributes: {
     description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
+      >;
     features: Schema.Attribute.Component<
-      "shared.image-with-title-and-description",
+      'shared.image-with-title-and-description',
       true
-    >
-    links: Schema.Attribute.Component<"utilities.link", true>
+    >;
+    links: Schema.Attribute.Component<'utilities.link', true>;
     title: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-  }
+      >;
+  };
 }
 
 export interface SectionsFaq extends Struct.ComponentSchema {
-  collectionName: "components_sections_faqs"
+  collectionName: 'components_sections_faqs';
   info: {
-    description: ""
-    displayName: "Faq"
-  }
+    description: '';
+    displayName: 'Faq';
+  };
   attributes: {
-    accordions: Schema.Attribute.Component<"utilities.accordions", true>
-    subTitle: Schema.Attribute.String
-    title: Schema.Attribute.String & Schema.Attribute.Required
-  }
+    accordions: Schema.Attribute.Component<'utilities.accordions', true>;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsFeatureSplit extends Struct.ComponentSchema {
+  collectionName: 'components_sections_feature_split';
+  info: {
+    description: 'Feature mit Text und Screenshot nebeneinander';
+    displayName: 'FeatureSplit';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    features: Schema.Attribute.Component<
+      'shared.image-with-title-and-description',
+      true
+    >;
+    image: Schema.Attribute.Component<'shared.image-with-config', false>;
+    imagePosition: Schema.Attribute.Enumeration<['left', 'right']> &
+      Schema.Attribute.DefaultTo<'right'>;
+    links: Schema.Attribute.Component<'utilities.link', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface SectionsFeaturesList extends Struct.ComponentSchema {
-  collectionName: "components_sections_features_lists"
+  collectionName: 'components_sections_features_lists';
   info: {
-    displayName: "FeaturesList"
-  }
+    displayName: 'FeaturesList';
+  };
   attributes: {
     description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
+      >;
     features: Schema.Attribute.Component<
-      "shared.image-with-title-and-description",
+      'shared.image-with-title-and-description',
       true
-    >
-    listStyle: Schema.Attribute.Enumeration<["boxGrid", "grid", "list"]> &
-      Schema.Attribute.DefaultTo<"list">
-    mainImage: Schema.Attribute.Component<"shared.image-with-config", false>
+    >;
+    listStyle: Schema.Attribute.Enumeration<['boxGrid', 'grid', 'list']> &
+      Schema.Attribute.DefaultTo<'list'>;
+    mainImage: Schema.Attribute.Component<'shared.image-with-config', false>;
     title: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-  }
+      >;
+  };
 }
 
 export interface SectionsHeadingWithCtaButton extends Struct.ComponentSchema {
-  collectionName: "components_sections_heading_with_cta_buttons"
+  collectionName: 'components_sections_heading_with_cta_buttons';
   info: {
-    description: ""
-    displayName: "HeadingWithCTAButton"
-  }
+    description: '';
+    displayName: 'HeadingWithCTAButton';
+  };
   attributes: {
-    cta: Schema.Attribute.Component<"utilities.link", false>
-    subText: Schema.Attribute.String
-    title: Schema.Attribute.String & Schema.Attribute.Required
-  }
+    cta: Schema.Attribute.Component<'utilities.link', false>;
+    subText: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface SectionsHero extends Struct.ComponentSchema {
-  collectionName: "components_sections_heroes"
+  collectionName: 'components_sections_heroes';
   info: {
-    description: ""
-    displayName: "Hero"
-  }
+    description: '';
+    displayName: 'Hero';
+  };
   attributes: {
     description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-    links: Schema.Attribute.Component<"utilities.link", true>
+      >;
+    links: Schema.Attribute.Component<'utilities.link', true>;
     note: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
+      >;
     tag: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
+      >;
     title: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-  }
+      >;
+  };
+}
+
+export interface SectionsHeroAnimated extends Struct.ComponentSchema {
+  collectionName: 'components_sections_hero_animated';
+  info: {
+    description: 'Hero mit animiertem Grid-Hintergrund';
+    displayName: 'HeroAnimated';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    links: Schema.Attribute.Component<'utilities.link', true>;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface SectionsImageWithCtaButton extends Struct.ComponentSchema {
-  collectionName: "components_sections_image_with_cta_buttons"
+  collectionName: 'components_sections_image_with_cta_buttons';
   info: {
-    description: ""
-    displayName: "ImageWithCTAButton"
-  }
+    description: '';
+    displayName: 'ImageWithCTAButton';
+  };
   attributes: {
-    image: Schema.Attribute.Component<"utilities.basic-image", false>
-    link: Schema.Attribute.Component<"utilities.link", false>
-    subText: Schema.Attribute.String
-    title: Schema.Attribute.String & Schema.Attribute.Required
-  }
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    subText: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsIntegrationsGrid extends Struct.ComponentSchema {
+  collectionName: 'components_sections_integrations_grid';
+  info: {
+    description: 'Integrations-Karten in 3-Spalten-Grid';
+    displayName: 'IntegrationsGrid';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    integrations: Schema.Attribute.Component<'shared.integration-card', true>;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsLogoCloud extends Struct.ComponentSchema {
+  collectionName: 'components_sections_logo_cloud';
+  info: {
+    description: 'Integrationslogos Raster';
+    displayName: 'LogoCloud';
+  };
+  attributes: {
+    logos: Schema.Attribute.Component<'shared.image-with-config', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsPricing extends Struct.ComponentSchema {
+  collectionName: 'components_sections_pricing';
+  info: {
+    description: 'Preispl\u00E4ne in 3-Spalten-Grid';
+    displayName: 'Pricing';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    plans: Schema.Attribute.Component<'shared.pricing-plan', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsProblemSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_problem_section';
+  info: {
+    description: 'Problem-Karten Sektion';
+    displayName: 'ProblemSection';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    problems: Schema.Attribute.Component<
+      'shared.image-with-title-and-description',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsStatistics extends Struct.ComponentSchema {
-  collectionName: "components_sections_statistics"
+  collectionName: 'components_sections_statistics';
   info: {
-    displayName: "Statistics"
-  }
+    displayName: 'Statistics';
+  };
   attributes: {
-    figures: Schema.Attribute.Component<"shared.figure", true>
-  }
+    figures: Schema.Attribute.Component<'shared.figure', true>;
+  };
+}
+
+export interface SectionsStatsStrip extends Struct.ComponentSchema {
+  collectionName: 'components_sections_stats_strip';
+  info: {
+    description: 'Kennzahlen mit Text-Einleitung';
+    displayName: 'StatsStrip';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    stats: Schema.Attribute.Component<'shared.figure', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTeam extends Struct.ComponentSchema {
+  collectionName: 'components_sections_team';
+  info: {
+    description: 'Team-Mitglieder mit Foto und Bio';
+    displayName: 'Team';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'utilities.link', true>;
+    members: Schema.Attribute.Component<'shared.team-member', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_sections_testimonials';
+  info: {
+    description: 'Kundenstimmen in Masonry-Grid';
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    testimonials: Schema.Attribute.Component<'shared.testimonial', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTimeline extends Struct.ComponentSchema {
+  collectionName: 'components_sections_timeline';
+  info: {
+    description: 'Vertikale Zeitleiste mit Ereignissen';
+    displayName: 'Timeline';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    events: Schema.Attribute.Component<'shared.timeline-event', true>;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SeoUtilitiesSeo extends Struct.ComponentSchema {
-  collectionName: "components_seo_utilities_seos"
+  collectionName: 'components_seo_utilities_seos';
   info: {
-    description: ""
-    displayName: "Seo"
-    icon: "search"
-  }
+    description: '';
+    displayName: 'Seo';
+    icon: 'search';
+  };
   attributes: {
-    applicationName: Schema.Attribute.String
-    canonicalUrl: Schema.Attribute.String
-    keywords: Schema.Attribute.Text
+    applicationName: Schema.Attribute.String;
+    canonicalUrl: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
     metaDescription: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160
-      }>
-    metaImage: Schema.Attribute.Media<"images">
+        maxLength: 160;
+      }>;
+    metaImage: Schema.Attribute.Media<'images'>;
     metaRobots: Schema.Attribute.Enumeration<
       [
-        "all",
-        "index",
-        "index,follow",
-        "noindex",
-        "noindex,follow",
-        "noindex,nofollow",
-        "none",
-        "noarchive",
-        "nosnippet",
-        "max-snippet",
+        'all',
+        'index',
+        'index,follow',
+        'noindex',
+        'noindex,follow',
+        'noindex,nofollow',
+        'none',
+        'noarchive',
+        'nosnippet',
+        'max-snippet',
       ]
     > &
-      Schema.Attribute.DefaultTo<"all">
+      Schema.Attribute.DefaultTo<'all'>;
     metaTitle: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60
-      }>
-    og: Schema.Attribute.Component<"seo-utilities.seo-og", false>
-    structuredData: Schema.Attribute.JSON
-    twitter: Schema.Attribute.Component<"seo-utilities.seo-twitter", false>
-  }
+        maxLength: 60;
+      }>;
+    og: Schema.Attribute.Component<'seo-utilities.seo-og', false>;
+    structuredData: Schema.Attribute.JSON;
+    twitter: Schema.Attribute.Component<'seo-utilities.seo-twitter', false>;
+  };
 }
 
 export interface SeoUtilitiesSeoOg extends Struct.ComponentSchema {
-  collectionName: "components_seo_utilities_seo_ogs"
+  collectionName: 'components_seo_utilities_seo_ogs';
   info: {
-    displayName: "SeoOg"
-    icon: "oneToMany"
-  }
+    displayName: 'SeoOg';
+    icon: 'oneToMany';
+  };
   attributes: {
-    description: Schema.Attribute.String
-    image: Schema.Attribute.Media<"images">
-    siteName: Schema.Attribute.String
-    title: Schema.Attribute.String
-    type: Schema.Attribute.Enumeration<["website", "article"]> &
-      Schema.Attribute.DefaultTo<"website">
-    url: Schema.Attribute.String
-  }
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    siteName: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['website', 'article']> &
+      Schema.Attribute.DefaultTo<'website'>;
+    url: Schema.Attribute.String;
+  };
 }
 
 export interface SeoUtilitiesSeoTwitter extends Struct.ComponentSchema {
-  collectionName: "components_seo_utilities_seo_twitters"
+  collectionName: 'components_seo_utilities_seo_twitters';
   info: {
-    displayName: "SeoTwitter"
-    icon: "oneToMany"
-  }
+    displayName: 'SeoTwitter';
+    icon: 'oneToMany';
+  };
   attributes: {
-    card: Schema.Attribute.String
-    creator: Schema.Attribute.String
-    creatorId: Schema.Attribute.String
-    description: Schema.Attribute.String
-    images: Schema.Attribute.Media<"images", true>
-    siteId: Schema.Attribute.String
-    title: Schema.Attribute.String
-  }
+    card: Schema.Attribute.String;
+    creator: Schema.Attribute.String;
+    creatorId: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    images: Schema.Attribute.Media<'images', true>;
+    siteId: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SeoUtilitiesSocialIcons extends Struct.ComponentSchema {
-  collectionName: "components_seo_utilities_social_icons"
+  collectionName: 'components_seo_utilities_social_icons';
   info: {
-    displayName: "SocialIcons"
-  }
+    displayName: 'SocialIcons';
+  };
   attributes: {
-    socials: Schema.Attribute.Component<"utilities.image-with-link", true>
-    title: Schema.Attribute.String
-  }
+    socials: Schema.Attribute.Component<'utilities.image-with-link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBlogPost extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blog_posts';
+  info: {
+    displayName: 'BlogPost';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    category: Schema.Attribute.String;
+    date: Schema.Attribute.String;
+    excerpt: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedChangelogEntry extends Struct.ComponentSchema {
+  collectionName: 'components_shared_changelog_entries';
+  info: {
+    displayName: 'ChangelogEntry';
+  };
+  attributes: {
+    changes: Schema.Attribute.Text;
+    date: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Text;
+    fixes: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    version: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface SharedFigure extends Struct.ComponentSchema {
-  collectionName: "components_shared_figures"
+  collectionName: 'components_shared_figures';
   info: {
-    displayName: "Figure"
-  }
+    displayName: 'Figure';
+  };
   attributes: {
     description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-    number: Schema.Attribute.BigInteger
-    prefix: Schema.Attribute.String
-    suffix: Schema.Attribute.String
-  }
+      >;
+    number: Schema.Attribute.BigInteger;
+    prefix: Schema.Attribute.String;
+    suffix: Schema.Attribute.String;
+  };
 }
 
 export interface SharedImageWithConfig extends Struct.ComponentSchema {
-  collectionName: "components_shared_image_with_configs"
+  collectionName: 'components_shared_image_with_configs';
   info: {
-    displayName: "ImageWithConfig"
-  }
+    displayName: 'ImageWithConfig';
+  };
   attributes: {
-    image: Schema.Attribute.Component<"utilities.basic-image", false>
-    position: Schema.Attribute.Enumeration<["left", "right"]>
-  }
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    position: Schema.Attribute.Enumeration<['left', 'right']>;
+  };
 }
 
 export interface SharedImageWithTitleAndDescription
   extends Struct.ComponentSchema {
-  collectionName: "components_shared_image_with_title_and_descriptions"
+  collectionName: 'components_shared_image_with_title_and_descriptions';
   info: {
-    displayName: "ImageWithTitleAndDescription"
-  }
+    displayName: 'ImageWithTitleAndDescription';
+  };
   attributes: {
     description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-    image: Schema.Attribute.Component<"utilities.basic-image", false>
+      >;
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
     title: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-  }
+      >;
+  };
+}
+
+export interface SharedIntegrationCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_integration_cards';
+  info: {
+    displayName: 'IntegrationCard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedPricingPlan extends Struct.ComponentSchema {
+  collectionName: 'components_shared_pricing_plans';
+  info: {
+    displayName: 'PricingPlan';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Text;
+    isHighlighted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    period: Schema.Attribute.String;
+    price: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTeamMember extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_members';
+  info: {
+    displayName: 'TeamMember';
+  };
+  attributes: {
+    bio: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    linkedinUrl: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+    twitterUrl: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials';
+  info: {
+    displayName: 'Testimonial';
+  };
+  attributes: {
+    authorCompany: Schema.Attribute.String;
+    authorName: Schema.Attribute.String & Schema.Attribute.Required;
+    authorRole: Schema.Attribute.String;
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedTimelineEvent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_events';
+  info: {
+    displayName: 'TimelineEvent';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    period: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    tags: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface UtilitiesAccordions extends Struct.ComponentSchema {
-  collectionName: "components_utilities_accordions"
+  collectionName: 'components_utilities_accordions';
   info: {
-    description: ""
-    displayName: "Accordions"
-  }
+    description: '';
+    displayName: 'Accordions';
+  };
   attributes: {
-    answer: Schema.Attribute.Text & Schema.Attribute.Required
-    question: Schema.Attribute.String & Schema.Attribute.Required
-  }
+    answer: Schema.Attribute.Text & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface UtilitiesBasicImage extends Struct.ComponentSchema {
-  collectionName: "components_utilities_basic_images"
+  collectionName: 'components_utilities_basic_images';
   info: {
-    displayName: "BasicImage"
-  }
+    displayName: 'BasicImage';
+  };
   attributes: {
-    alt: Schema.Attribute.String
-    fallbackSrc: Schema.Attribute.String
-    height: Schema.Attribute.Integer
-    media: Schema.Attribute.Media<"images" | "videos"> &
-      Schema.Attribute.Required
-    width: Schema.Attribute.Integer
-  }
+    alt: Schema.Attribute.String;
+    fallbackSrc: Schema.Attribute.String;
+    height: Schema.Attribute.Integer;
+    media: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
+    width: Schema.Attribute.Integer;
+  };
 }
 
 export interface UtilitiesCkEditorContent extends Struct.ComponentSchema {
-  collectionName: "components_utilities_ck_editor_contents"
+  collectionName: 'components_utilities_ck_editor_contents';
   info: {
-    displayName: "CkEditorContent"
-  }
+    displayName: 'CkEditorContent';
+  };
   attributes: {
     content: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "defaultCkEditor"
+          preset: 'defaultCkEditor';
         }
-      >
-  }
+      >;
+  };
 }
 
 export interface UtilitiesCkEditorText extends Struct.ComponentSchema {
-  collectionName: "components_utilities_ck_editor_texts"
+  collectionName: 'components_utilities_ck_editor_texts';
   info: {
-    displayName: "CkEditorText"
-  }
+    displayName: 'CkEditorText';
+  };
   attributes: {
     content: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        "plugin::ckeditor5.CKEditor",
+        'plugin::ckeditor5.CKEditor',
         {
-          preset: "simpleCkEditor"
+          preset: 'simpleCkEditor';
         }
-      >
-  }
+      >;
+  };
 }
 
 export interface UtilitiesImageWithLink extends Struct.ComponentSchema {
-  collectionName: "components_utilities_image_with_links"
+  collectionName: 'components_utilities_image_with_links';
   info: {
-    description: ""
-    displayName: "ImageWithLink"
-  }
+    description: '';
+    displayName: 'ImageWithLink';
+  };
   attributes: {
-    image: Schema.Attribute.Component<"utilities.basic-image", false>
-    link: Schema.Attribute.Component<"utilities.link", false>
-  }
+    image: Schema.Attribute.Component<'utilities.basic-image', false>;
+    link: Schema.Attribute.Component<'utilities.link', false>;
+  };
 }
 
 export interface UtilitiesLink extends Struct.ComponentSchema {
-  collectionName: "components_utilities_links"
+  collectionName: 'components_utilities_links';
   info: {
-    displayName: "Link"
-  }
+    displayName: 'Link';
+  };
   attributes: {
-    decorations: Schema.Attribute.Component<"utilities.link-decorations", false>
-    href: Schema.Attribute.String & Schema.Attribute.Required
-    label: Schema.Attribute.String & Schema.Attribute.Required
+    decorations: Schema.Attribute.Component<
+      'utilities.link-decorations',
+      false
+    >;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
     newTab: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>
-    page: Schema.Attribute.Relation<"oneToOne", "api::page.page">
-    type: Schema.Attribute.Enumeration<["external", "page"]> &
+      Schema.Attribute.DefaultTo<false>;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
+    type: Schema.Attribute.Enumeration<['external', 'page']> &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<"page">
-  }
+      Schema.Attribute.DefaultTo<'page'>;
+  };
 }
 
 export interface UtilitiesLinkDecorations extends Struct.ComponentSchema {
-  collectionName: "components_utilities_link_decorations"
+  collectionName: 'components_utilities_link_decorations';
   info: {
-    displayName: "LinkDecorations"
-  }
+    displayName: 'LinkDecorations';
+  };
   attributes: {
     disableAnimations: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>
+      Schema.Attribute.DefaultTo<false>;
     hasIcons: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>
-    leftIcon: Schema.Attribute.Component<"utilities.basic-image", false>
-    rightIcon: Schema.Attribute.Component<"utilities.basic-image", false>
+      Schema.Attribute.DefaultTo<false>;
+    leftIcon: Schema.Attribute.Component<'utilities.basic-image', false>;
+    rightIcon: Schema.Attribute.Component<'utilities.basic-image', false>;
     size: Schema.Attribute.Enumeration<
-      ["default", "xs", "sm", "lg", "icon", "icon-xs", "icon-sm", "icon-lg"]
+      ['default', 'xs', 'sm', 'lg', 'icon', 'icon-xs', 'icon-sm', 'icon-lg']
     > &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<"default">
+      Schema.Attribute.DefaultTo<'default'>;
     variant: Schema.Attribute.Enumeration<
-      ["default", "destructive", "outline", "secondary", "ghost", "link"]
+      ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link']
     > &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<"link">
-  }
+      Schema.Attribute.DefaultTo<'link'>;
+  };
 }
 
 export interface UtilitiesLinksWithTitle extends Struct.ComponentSchema {
-  collectionName: "components_utilities_links_with_titles"
+  collectionName: 'components_utilities_links_with_titles';
   info: {
-    displayName: "LinksWithTitle"
-  }
+    displayName: 'LinksWithTitle';
+  };
   attributes: {
-    links: Schema.Attribute.Component<"utilities.link", true>
-    title: Schema.Attribute.String
-  }
+    links: Schema.Attribute.Component<'utilities.link', true>;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface UtilitiesText extends Struct.ComponentSchema {
-  collectionName: "components_utilities_texts"
+  collectionName: 'components_utilities_texts';
   info: {
-    displayName: "Text"
-  }
+    displayName: 'Text';
+  };
   attributes: {
-    text: Schema.Attribute.String
-  }
+    text: Schema.Attribute.String;
+  };
 }
 
 export interface UtilitiesTipTapRichText extends Struct.ComponentSchema {
-  collectionName: "components_utilities_tip_tap_rich_texts"
+  collectionName: 'components_utilities_tip_tap_rich_texts';
   info: {
-    displayName: "TipTapRichText"
-    icon: "layer"
-  }
+    displayName: 'TipTapRichText';
+    icon: 'layer';
+  };
   attributes: {
     content: Schema.Attribute.Text &
       Schema.Attribute.CustomField<
-        "plugin::tiptap-editor.RichText",
+        'plugin::tiptap-editor.RichText',
         {
-          preset: "everything"
+          preset: 'everything';
         }
-      >
-  }
+      >;
+  };
 }
 
-declare module "@strapi/strapi" {
+declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      "elements.footer-item": ElementsFooterItem
-      "forms.contact-form": FormsContactForm
-      "forms.newsletter-form": FormsNewsletterForm
-      "layout.navbar-item": LayoutNavbarItem
-      "sections.animated-logo-row": SectionsAnimatedLogoRow
-      "sections.carousel": SectionsCarousel
-      "sections.cta-banner": SectionsCtaBanner
-      "sections.faq": SectionsFaq
-      "sections.features-list": SectionsFeaturesList
-      "sections.heading-with-cta-button": SectionsHeadingWithCtaButton
-      "sections.hero": SectionsHero
-      "sections.image-with-cta-button": SectionsImageWithCtaButton
-      "sections.statistics": SectionsStatistics
-      "seo-utilities.seo": SeoUtilitiesSeo
-      "seo-utilities.seo-og": SeoUtilitiesSeoOg
-      "seo-utilities.seo-twitter": SeoUtilitiesSeoTwitter
-      "seo-utilities.social-icons": SeoUtilitiesSocialIcons
-      "shared.figure": SharedFigure
-      "shared.image-with-config": SharedImageWithConfig
-      "shared.image-with-title-and-description": SharedImageWithTitleAndDescription
-      "utilities.accordions": UtilitiesAccordions
-      "utilities.basic-image": UtilitiesBasicImage
-      "utilities.ck-editor-content": UtilitiesCkEditorContent
-      "utilities.ck-editor-text": UtilitiesCkEditorText
-      "utilities.image-with-link": UtilitiesImageWithLink
-      "utilities.link": UtilitiesLink
-      "utilities.link-decorations": UtilitiesLinkDecorations
-      "utilities.links-with-title": UtilitiesLinksWithTitle
-      "utilities.text": UtilitiesText
-      "utilities.tip-tap-rich-text": UtilitiesTipTapRichText
+      'elements.footer-item': ElementsFooterItem;
+      'forms.contact-form': FormsContactForm;
+      'forms.newsletter-form': FormsNewsletterForm;
+      'layout.navbar-item': LayoutNavbarItem;
+      'sections.animated-logo-row': SectionsAnimatedLogoRow;
+      'sections.announcement-banner': SectionsAnnouncementBanner;
+      'sections.blog-section': SectionsBlogSection;
+      'sections.carousel': SectionsCarousel;
+      'sections.changelog': SectionsChangelog;
+      'sections.cta-banner': SectionsCtaBanner;
+      'sections.faq': SectionsFaq;
+      'sections.feature-split': SectionsFeatureSplit;
+      'sections.features-list': SectionsFeaturesList;
+      'sections.heading-with-cta-button': SectionsHeadingWithCtaButton;
+      'sections.hero': SectionsHero;
+      'sections.hero-animated': SectionsHeroAnimated;
+      'sections.image-with-cta-button': SectionsImageWithCtaButton;
+      'sections.integrations-grid': SectionsIntegrationsGrid;
+      'sections.logo-cloud': SectionsLogoCloud;
+      'sections.pricing': SectionsPricing;
+      'sections.problem-section': SectionsProblemSection;
+      'sections.statistics': SectionsStatistics;
+      'sections.stats-strip': SectionsStatsStrip;
+      'sections.team': SectionsTeam;
+      'sections.testimonials': SectionsTestimonials;
+      'sections.timeline': SectionsTimeline;
+      'seo-utilities.seo': SeoUtilitiesSeo;
+      'seo-utilities.seo-og': SeoUtilitiesSeoOg;
+      'seo-utilities.seo-twitter': SeoUtilitiesSeoTwitter;
+      'seo-utilities.social-icons': SeoUtilitiesSocialIcons;
+      'shared.blog-post': SharedBlogPost;
+      'shared.changelog-entry': SharedChangelogEntry;
+      'shared.figure': SharedFigure;
+      'shared.image-with-config': SharedImageWithConfig;
+      'shared.image-with-title-and-description': SharedImageWithTitleAndDescription;
+      'shared.integration-card': SharedIntegrationCard;
+      'shared.pricing-plan': SharedPricingPlan;
+      'shared.team-member': SharedTeamMember;
+      'shared.testimonial': SharedTestimonial;
+      'shared.timeline-event': SharedTimelineEvent;
+      'utilities.accordions': UtilitiesAccordions;
+      'utilities.basic-image': UtilitiesBasicImage;
+      'utilities.ck-editor-content': UtilitiesCkEditorContent;
+      'utilities.ck-editor-text': UtilitiesCkEditorText;
+      'utilities.image-with-link': UtilitiesImageWithLink;
+      'utilities.link': UtilitiesLink;
+      'utilities.link-decorations': UtilitiesLinkDecorations;
+      'utilities.links-with-title': UtilitiesLinksWithTitle;
+      'utilities.text': UtilitiesText;
+      'utilities.tip-tap-rich-text': UtilitiesTipTapRichText;
     }
   }
 }
