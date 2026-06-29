@@ -50,7 +50,7 @@ export default function StrapiPageView({ params, searchParams }: Props) {
         </Container>
 
         {content
-          .filter((comp) => comp != null)
+          .filter((comp: any) => comp != null)
           .map((comp) => {
             const name = comp.__component
             const id = comp.id
