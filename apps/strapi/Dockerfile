@@ -1,4 +1,4 @@
-# This is PRODUCTION Dockerfile for Strapi in Turborepo.
+# Dockerfile für Strapi in Turborepo (Tugus)
 # It's assumed that this Dockerfile is run from the root of the monorepo.
 
 # Related references:
@@ -17,8 +17,6 @@ RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev l
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@11.1.1 --activate
-
-ENV NODE_ENV=development
 
 # Set working directory
 WORKDIR /app
@@ -51,8 +49,8 @@ COPY --from=prepare /app/out/json/ .
 COPY --from=prepare /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=prepare /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
-# Override NODE_ENV for build stage to install all dependencies including devDependencies
-# They (typescrip, tailwindcss etc.) are needed during build and pnpm would skip them from the start
+# Use development during build to install all dependencies including devDependencies
+# (typescript, tailwindcss etc. are needed during build)
 ENV NODE_ENV=development
 
 # see https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/reference.md#run---mounttypecache
@@ -68,17 +66,12 @@ COPY turbo.json turbo.json
 
 RUN turbo run build
 
-# Remove devDependencies after build to reduce image size
-# RUN pnpm prune --prod
-
 # ---
 FROM node:24-alpine AS runner
 
 RUN apk add --no-cache vips-dev bash
 
 ARG APP
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
 
 # Don't run production as root
 RUN addgroup --system --gid 1001 strapi
@@ -87,9 +80,12 @@ RUN adduser --system --uid 1001 strapi
 WORKDIR /app
 COPY --from=builder --chown=strapi:strapi /app /app
 
+# Run in development mode so Content-Type Builder is available
+ENV NODE_ENV=development
+
 ENV PATH=/app/apps/${APP}/node_modules/.bin:$PATH
 
 USER strapi
 WORKDIR /app/apps/${APP}
 EXPOSE ${PORT:-1337}
-CMD ["node", "scripts/seed-runner.mjs", "start"]
+CMD ["node", "scripts/seed-runner.mjs", "develop"]
