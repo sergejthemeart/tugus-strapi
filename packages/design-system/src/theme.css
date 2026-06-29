@@ -1,14 +1,23 @@
-/* Shadcn/ui config (Dark mode) */
+/* Tugus Custom Tokens */
+@layer base {
+  :root {
+    --tugus-champagne: oklch(0.9247 0.0524 66.1732);
+    --tugus-dark: oklch(0.1776 0 0);
+    --tugus-card: oklch(0.2134 0 0);
+  }
+}
+
+/* Shadcn/ui config (Dark mode) + Tugus Dark overrides */
 @layer base {
   .dark {
-    --color-background: oklch(0.145 0 0);
-    --color-foreground: oklch(0.985 0 0);
-    --color-card: oklch(0.145 0 0);
+    --color-background: oklch(0.1776 0 0);
+    --color-foreground: oklch(0.9491 0 0);
+    --color-card: oklch(0.2134 0 0);
     --color-card-foreground: oklch(0.985 0 0);
     --color-popover: oklch(0.145 0 0);
     --color-popover-foreground: oklch(0.985 0 0);
-    --color-primary: oklch(0.985 0 0);
-    --color-primary-foreground: oklch(0.205 0 0);
+    --color-primary: oklch(0.9247 0.0524 66.1732);
+    --color-primary-foreground: oklch(0.1776 0 0);
     --color-secondary: oklch(0.269 0 0);
     --color-secondary-foreground: oklch(0.985 0 0);
     --color-muted: oklch(0.269 0 0);
@@ -21,6 +30,11 @@
     --color-input: oklch(1 0 0 / 15%);
     --color-ring: oklch(0.556 0 0);
   }
+}
+
+@theme {
+  --color-tugus-champagne: oklch(0.9247 0.0524 66.1732);
+  --color-tugus-dark: oklch(0.1776 0 0);
 }
 
 @theme static {
@@ -47,7 +61,7 @@
   --color-ring: oklch(0.708 0 0);
 
   /* Tailwind v4 config */
-  --font-sans: "Roboto", sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
   --color-red-50: oklch(0.971 0.013 17.38);
   --color-red-100: oklch(0.936 0.032 17.717);
   --color-red-200: oklch(0.885 0.062 18.334);

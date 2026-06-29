@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_pricing_plans",
+  "info": {
+    "displayName": "PricingPlan"
+  },
+  "options": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "price": { "type": "string" },
+    "period": { "type": "string" },
+    "description": { "type": "text" },
+    "features": { "type": "text" },
+    "isHighlighted": { "type": "boolean", "default": false },
+    "link": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": false
+    }
+  }
+}

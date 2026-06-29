@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_problem_section",
+  "info": {
+    "displayName": "ProblemSection",
+    "description": "Problem-Karten Sektion"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "problems": {
+      "type": "component",
+      "component": "shared.image-with-title-and-description",
+      "repeatable": true
+    }
+  }
+}

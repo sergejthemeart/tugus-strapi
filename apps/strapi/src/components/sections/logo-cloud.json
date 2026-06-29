@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_logo_cloud",
+  "info": {
+    "displayName": "LogoCloud",
+    "description": "Integrationslogos Raster"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "logos": {
+      "type": "component",
+      "component": "shared.image-with-config",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_integrations_grid",
+  "info": {
+    "displayName": "IntegrationsGrid",
+    "description": "Integrations-Karten in 3-Spalten-Grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "link": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": false
+    },
+    "integrations": {
+      "type": "component",
+      "component": "shared.integration-card",
+      "repeatable": true
+    }
+  }
+}

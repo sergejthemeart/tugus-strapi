@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_pricing",
+  "info": {
+    "displayName": "Pricing",
+    "description": "Preispläne in 3-Spalten-Grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "plans": {
+      "type": "component",
+      "component": "shared.pricing-plan",
+      "repeatable": true
+    }
+  }
+}

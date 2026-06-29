@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_changelog_entries",
+  "info": {
+    "displayName": "ChangelogEntry"
+  },
+  "options": {},
+  "attributes": {
+    "version": { "type": "string", "required": true },
+    "date": { "type": "string" },
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "features": { "type": "text" },
+    "changes": { "type": "text" },
+    "fixes": { "type": "text" }
+  }
+}

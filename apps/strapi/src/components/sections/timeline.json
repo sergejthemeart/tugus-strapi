@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_timeline",
+  "info": {
+    "displayName": "Timeline",
+    "description": "Vertikale Zeitleiste mit Ereignissen"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "events": {
+      "type": "component",
+      "component": "shared.timeline-event",
+      "repeatable": true
+    }
+  }
+}

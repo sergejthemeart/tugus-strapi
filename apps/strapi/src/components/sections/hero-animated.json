@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_hero_animated",
+  "info": {
+    "displayName": "HeroAnimated",
+    "description": "Hero mit animiertem Grid-Hintergrund"
+  },
+  "options": {},
+  "attributes": {
+    "tag": { "type": "string" },
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "links": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": true
+    }
+  }
+}

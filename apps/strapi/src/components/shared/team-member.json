@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_team_members",
+  "info": {
+    "displayName": "TeamMember"
+  },
+  "options": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "role": { "type": "string" },
+    "bio": { "type": "text" },
+    "twitterUrl": { "type": "string" },
+    "linkedinUrl": { "type": "string" },
+    "image": {
+      "type": "component",
+      "component": "utilities.basic-image",
+      "repeatable": false
+    }
+  }
+}

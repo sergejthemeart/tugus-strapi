@@ -1,7 +1,8 @@
-import { Roboto } from "next/font/google"
+import localFont from "next/font/local"
 
-export const fontRoboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700"],
-  variable: "--font-roboto",
+export const fontInter = localFont({
+  src: "../../public/fonts/InterVariable.woff2",
+  variable: "--font-sans",
+  display: "swap",
+  weight: "100 900",
 })

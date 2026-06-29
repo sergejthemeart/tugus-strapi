@@ -11,6 +11,19 @@ import { StrapiStatistics } from "@/components/page-builder/components/sections/
 import StrapiHeadingWithCTAButton from "@/components/page-builder/components/sections/StrapiHeadingWithCTAButton"
 import StrapiHero from "@/components/page-builder/components/sections/StrapiHero"
 import StrapiImageWithCTAButton from "@/components/page-builder/components/sections/StrapiImageWithCTAButton"
+import StrapiAnnouncementBanner from "@/components/page-builder/components/sections/StrapiAnnouncementBanner"
+import StrapiBlogSection from "@/components/page-builder/components/sections/StrapiBlogSection"
+import StrapiChangelog from "@/components/page-builder/components/sections/StrapiChangelog"
+import StrapiFeatureSplit from "@/components/page-builder/components/sections/StrapiFeatureSplit"
+import StrapiHeroAnimated from "@/components/page-builder/components/sections/StrapiHeroAnimated"
+import StrapiIntegrationsGrid from "@/components/page-builder/components/sections/StrapiIntegrationsGrid"
+import StrapiLogoCloud from "@/components/page-builder/components/sections/StrapiLogoCloud"
+import StrapiPricing from "@/components/page-builder/components/sections/StrapiPricing"
+import StrapiProblemSection from "@/components/page-builder/components/sections/StrapiProblemSection"
+import StrapiStatsStrip from "@/components/page-builder/components/sections/StrapiStatsStrip"
+import StrapiTeam from "@/components/page-builder/components/sections/StrapiTeam"
+import StrapiTestimonials from "@/components/page-builder/components/sections/StrapiTestimonials"
+import StrapiTimeline from "@/components/page-builder/components/sections/StrapiTimeline"
 import StrapiCkEditorContent from "@/components/page-builder/components/utilities/StrapiCkEditorContent"
 import StrapiTipTapEditorContent from "@/components/page-builder/components/utilities/StrapiTipTapEditorContent"
 
@@ -44,6 +57,21 @@ export const PageContentComponents: Partial<
   // Forms
   "forms.contact-form": StrapiContactForm,
   "forms.newsletter-form": StrapiNewsletterForm,
+
+  // Tugus blocks (shadcn-ui-blocks)
+  "sections.hero-animated": StrapiHeroAnimated,
+  "sections.feature-split": StrapiFeatureSplit,
+  "sections.logo-cloud": StrapiLogoCloud,
+  "sections.problem-section": StrapiProblemSection,
+  "sections.testimonials": StrapiTestimonials,
+  "sections.pricing": StrapiPricing,
+  "sections.team": StrapiTeam,
+  "sections.blog-section": StrapiBlogSection,
+  "sections.timeline": StrapiTimeline,
+  "sections.changelog": StrapiChangelog,
+  "sections.announcement-banner": StrapiAnnouncementBanner,
+  "sections.integrations-grid": StrapiIntegrationsGrid,
+  "sections.stats-strip": StrapiStatsStrip,
 
   // Add more components here
 }

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_sections_feature_split",
+  "info": {
+    "displayName": "FeatureSplit",
+    "description": "Feature mit Text und Screenshot nebeneinander"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "default": "right"
+    },
+    "image": {
+      "type": "component",
+      "component": "shared.image-with-config",
+      "repeatable": false
+    },
+    "features": {
+      "type": "component",
+      "component": "shared.image-with-title-and-description",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": true
+    }
+  }
+}

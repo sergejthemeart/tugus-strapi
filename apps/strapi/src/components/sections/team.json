@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_team",
+  "info": {
+    "displayName": "Team",
+    "description": "Team-Mitglieder mit Foto und Bio"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "links": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": true
+    },
+    "members": {
+      "type": "component",
+      "component": "shared.team-member",
+      "repeatable": true
+    }
+  }
+}

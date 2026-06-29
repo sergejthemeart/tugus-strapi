@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_stats_strip",
+  "info": {
+    "displayName": "StatsStrip",
+    "description": "Kennzahlen mit Text-Einleitung"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "link": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": false
+    },
+    "stats": {
+      "type": "component",
+      "component": "shared.figure",
+      "repeatable": true
+    }
+  }
+}

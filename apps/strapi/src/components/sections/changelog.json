@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_changelog",
+  "info": {
+    "displayName": "Changelog",
+    "description": "Versions-Chronik mit Features, Changes und Fixes"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "entries": {
+      "type": "component",
+      "component": "shared.changelog-entry",
+      "repeatable": true
+    }
+  }
+}

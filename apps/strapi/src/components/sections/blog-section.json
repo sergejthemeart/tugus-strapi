@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_blog_section",
+  "info": {
+    "displayName": "BlogSection",
+    "description": "Blog-Beiträge Übersicht"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "link": {
+      "type": "component",
+      "component": "utilities.link",
+      "repeatable": false
+    },
+    "posts": {
+      "type": "component",
+      "component": "shared.blog-post",
+      "repeatable": true
+    }
+  }
+}
