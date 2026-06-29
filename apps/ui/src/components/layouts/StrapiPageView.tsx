@@ -55,7 +55,7 @@ export default function StrapiPageView({ params, searchParams }: Props) {
             const name = comp.__component
             const id = comp.id
             const key = `${name}-${id}`
-            const Component = PageContentComponents[name]
+            const Component = PageContentComponents[name as keyof typeof PageContentComponents]
             if (Component == null) {
               logger.warn("Unknown page-builder component", { name, id })
 
