@@ -28,7 +28,7 @@ export function NavbarInner({
 }) {
   return (
     <NavbarMobileProvider>
-      <header className="sticky top-0 z-50 h-16 w-full border-b border-white/10 bg-tugus-dark text-white transition-colors duration-300">
+      <header className="sticky top-0 z-50 h-16 w-full transition-colors duration-300">
         <div className="flex h-16 items-center">
           <Container className="flex h-full items-center justify-between px-6">
             {/* LEFT SIDE */}
