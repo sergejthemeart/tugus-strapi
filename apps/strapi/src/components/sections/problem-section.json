@@ -8,6 +8,12 @@
   "attributes": {
     "title": { "type": "string" },
     "description": { "type": "text" },
+    "background": {
+      "type": "enumeration",
+      "enum": ["default", "muted", "dark"],
+      "default": "default",
+      "required": true
+    },
     "problems": {
       "type": "component",
       "component": "shared.image-with-title-and-description",

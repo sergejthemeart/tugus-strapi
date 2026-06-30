@@ -4,17 +4,28 @@ import type { Data } from "@repo/strapi-types"
 
 import { Container } from "@/components/elementary/Container"
 import { StrapiBasicImage } from "@/components/page-builder/components/utilities/StrapiBasicImage"
+import { cn } from "@/lib/styles"
 import type { PageBuilderComponentProps } from "@/types/general"
+
+const backgroundClasses = {
+  default: "bg-background",
+  muted: "bg-muted",
+  dark: "dark bg-background",
+} as const
 
 export function StrapiProblemSection({
   component,
 }: PageBuilderComponentProps & {
   component: Data.Component<"sections.problem-section">
 }) {
-  const { title, description, problems } = component
+  const { title, description, problems, background } = component
+
+  const backgroundClass =
+    backgroundClasses[background as keyof typeof backgroundClasses] ??
+    backgroundClasses.default
 
   return (
-    <section className="dark bg-tugus-dark py-24">
+    <section className={cn("py-24", backgroundClass)}>
       <Container>
         {(title || description) && (
           <div className="mb-12 text-center">
@@ -35,7 +46,7 @@ export function StrapiProblemSection({
             {problems.map((problem) => (
               <div
                 key={problem.id}
-                className="rounded-2xl border border-white/10 bg-card p-6 shadow-md"
+                className="rounded-2xl border border-border bg-card p-6 shadow-md"
               >
                 {problem.image && (
                   <div className="mb-4">
