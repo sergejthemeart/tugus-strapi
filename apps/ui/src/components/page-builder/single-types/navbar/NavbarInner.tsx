@@ -8,6 +8,7 @@ import LocaleSwitcher from "@/components/elementary/LocaleSwitcher"
 import { StrapiBasicImage } from "@/components/page-builder/components/utilities/StrapiBasicImage"
 import StrapiImageWithLink from "@/components/page-builder/components/utilities/StrapiImageWithLink"
 import StrapiLink from "@/components/page-builder/components/utilities/StrapiLink"
+import { routing } from "@/lib/navigation"
 import {
   NavbarMobileNavigation,
   NavbarMobileProvider,
