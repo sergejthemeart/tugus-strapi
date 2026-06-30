@@ -46,12 +46,14 @@ export const generateBreadcrumbs = async (
   }
 
   // Create Breadcrumbs data based on parents
-  const breadcrumbs: Breadcrumb[] = [
-    {
-      title: document.breadcrumbTitle ?? document.title,
+  const breadcrumbs: Breadcrumb[] = []
+
+  if (document.breadcrumbTitle) {
+    breadcrumbs.push({
+      title: document.breadcrumbTitle,
       fullPath: document.fullPath,
-    },
-  ]
+    })
+  }
 
   let hierarchy = await strapi.documents(type).findOne({
     documentId: document.documentId,
@@ -68,10 +70,12 @@ export const generateBreadcrumbs = async (
       break
     }
 
-    breadcrumbs.unshift({
-      title: parent.breadcrumbTitle ?? parent.title,
-      fullPath: parent.fullPath,
-    })
+    if (parent.breadcrumbTitle) {
+      breadcrumbs.unshift({
+        title: parent.breadcrumbTitle,
+        fullPath: parent.fullPath,
+      })
+    }
 
     hierarchy = parent
   }
