@@ -54,11 +54,7 @@ export function NavbarInner({
               {routing.locales.length > 1 && <LocaleSwitcher locale={locale} />}
               <div className="flex h-8 w-px flex-1 bg-black/70" />
               {navbarData?.primaryButtons?.map((button) => (
-                <StrapiLink
-                  key={button.id}
-                  component={button}
-                  className="bg-tugus-champagne text-tugus-dark hover:bg-tugus-champagne/90"
-                />
+                <StrapiLink key={button.id} component={button} />
               ))}
             </div>
             <NavbarMobileToggle />
