@@ -60,7 +60,7 @@
       ]
     },
     "structuredData": {
-      "type": "json"
+      "type": "text"
     }
   }
 }
