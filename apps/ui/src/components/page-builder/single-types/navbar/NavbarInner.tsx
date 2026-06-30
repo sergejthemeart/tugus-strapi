@@ -8,7 +8,6 @@ import LocaleSwitcher from "@/components/elementary/LocaleSwitcher"
 import { StrapiBasicImage } from "@/components/page-builder/components/utilities/StrapiBasicImage"
 import StrapiImageWithLink from "@/components/page-builder/components/utilities/StrapiImageWithLink"
 import StrapiLink from "@/components/page-builder/components/utilities/StrapiLink"
-import { NavbarAuthSection } from "@/components/page-builder/single-types/navbar/NavbarAuthSection"
 import {
   NavbarMobileNavigation,
   NavbarMobileProvider,
@@ -52,8 +51,7 @@ export function NavbarInner({
 
             {/* RIGHT SIDE */}
             <div className="hidden h-full items-center gap-2 pl-4 lg:flex">
-              <NavbarAuthSection sessionSSR={session} />
-              <LocaleSwitcher locale={locale} />
+              {routing.locales.length > 1 && <LocaleSwitcher locale={locale} />}
               <div className="flex h-8 w-px flex-1 bg-black/70" />
               {navbarData?.primaryButtons?.map((button) => (
                 <StrapiLink
