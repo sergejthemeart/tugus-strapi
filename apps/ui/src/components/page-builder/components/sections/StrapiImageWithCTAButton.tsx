@@ -27,18 +27,18 @@ export function StrapiImageWithCTAButton({
         </div>
 
         <div className="mt-4 md:mt-0">
-          <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-foreground">
             {component.title}
           </h2>
           {component.subText && (
-            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+            <p className="mb-6 font-light text-muted-foreground md:text-lg">
               {component.subText}
             </p>
           )}
 
           <StrapiLink
             component={component.link}
-            className="focus:ring-primary-300 bg-primary inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+            className="bg-primary text-primary-foreground inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           />
         </div>
       </Container>

@@ -19,11 +19,11 @@ export function StrapiHeadingWithCTAButton({
       <Container>
         <div className="mx-auto grid max-w-[--breakpoint-sm] grid-cols-1 items-center gap-8 text-left sm:grid-cols-3">
           <div className="flex flex-col items-center text-center sm:col-span-2">
-            <h2 className="mb-4 text-4xl leading-tight font-extrabold tracking-tight text-gray-900">
+            <h2 className="mb-4 text-4xl leading-tight font-extrabold tracking-tight text-foreground">
               {component.title}
             </h2>
             {component.subText && (
-              <p className="mb-6 font-light text-gray-500 md:text-lg">
+              <p className="mb-6 font-light text-muted-foreground md:text-lg">
                 {component.subText}
               </p>
             )}
@@ -31,7 +31,7 @@ export function StrapiHeadingWithCTAButton({
           <div className="flex h-full items-center justify-start self-center sm:col-span-1">
             <StrapiLink
               component={component.cta}
-              className="inline-flex w-full items-center justify-center rounded-lg bg-neutral-900 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-neutral-800 focus:ring-2 focus:ring-neutral-400 focus:outline-none lg:w-fit"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:w-fit"
             />
           </div>
         </div>
