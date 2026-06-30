@@ -5,8 +5,8 @@ export type TypographyTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
 export type ElementTag = "ol" | "ul" | "blockquote"
 
 export const textColorVariants = {
-  black: "text-black dark:text-white",
-  white: "text-white dark:text-black",
+  black: "",
+  white: "",
   // more variants will be added here
 }
 
