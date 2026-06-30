@@ -43,7 +43,7 @@ export function StrapiHeroAnimated({
         {links && links.length > 0 && (
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             {links.map((link) => (
-              <StrapiLink key={link.id} component={link} className="rounded-full" />
+              <StrapiLink key={link.id} component={link} className="rounded-md" />
             ))}
           </div>
         )}
